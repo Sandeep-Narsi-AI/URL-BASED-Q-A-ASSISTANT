@@ -11,7 +11,6 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 
-from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
