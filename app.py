@@ -2,7 +2,7 @@ import os
 import pickle
 import streamlit as st
 import time
-from langchain import OpenAI
+from langchain_openai import OpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
