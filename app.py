@@ -1,8 +1,3 @@
-import subprocess
-
-# Try installing langchain-openai
-subprocess.run(["pip", "install", "langchain-openai"], check=True)
-
 import os
 import pickle
 import streamlit as st
