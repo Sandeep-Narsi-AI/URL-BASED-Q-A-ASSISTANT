@@ -51,10 +51,10 @@ if process_url_clicked:
     #Save the FAISS index to a pickle file
     with open(file_path, "wb") as f:
         pickle.dump(pkl, f)
-query = main_placeholder.text_input("Question: ")
-get_answer_clicked = main_placeholder.button("Get Answer")  # Button to get the answer
+query = st.text_input("Question:")  # Keep text box visible
+get_answer_clicked = st.button("Get Answer")  # Button below the text box
 
-if get_answer_clicked and query:
+if get_answer_clicked and query:  # Ensure button is clicked and query is not empty
     if os.path.exists(file_path):
         with open(file_path, "rb") as f:
             pkl = pickle.load(f)
