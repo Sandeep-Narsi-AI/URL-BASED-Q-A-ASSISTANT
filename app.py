@@ -2,7 +2,7 @@ import os
 import pickle
 import streamlit as st
 import time
-from langchain_openai import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain_community.vectorstores import InMemoryVectorStore
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
