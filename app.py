@@ -52,21 +52,19 @@ if process_url_clicked:
     with open(file_path, "wb") as f:
         pickle.dump(pkl, f)
 query = main_placeholder.text_input("Question: ")
+get_answer_clicked = main_placeholder.button("Get Answer")  # Button to get the answer
 
-if query:
+if get_answer_clicked and query:
     if os.path.exists(file_path):
         with open(file_path, "rb") as f:
             pkl = pickle.load(f)
-            #Describe the FAISS index and create a retrieval question-answering chain
-            vectorstore = FAISS.deserialize_from_bytes(embeddings = OpenAIEmbeddings(), serialized = pkl, allow_dangerous_deserialization = True)
-            # Assuming `llm` is your initialized OpenAI model and `vectorstore` is your FAISS index
-            chain = RetrievalQAWithSourcesChain.from_llm(llm=llm,retriever=vectorstore.as_retriever())
+            vectorstore = FAISS.deserialize_from_bytes(embeddings=OpenAIEmbeddings(), serialized=pkl, allow_dangerous_deserialization=True)
+            chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vectorstore.as_retriever())
             result = chain({"question": query}, return_only_outputs=True)
-            #Result will be dictionary of this Format --> {"answer": "", "sources" : []}
-            st.header("Answer") #Display Header for Answer
-            st.write(result["answer"]) #Display The Answer
+            
+            st.header("Answer")
+            st.write(result["answer"])
 
-            #Display Sources if available
             sources = result.get("sources", "")
             if sources:
                 st.subheader("Sources")
