@@ -1,0 +1,16 @@
+# Ignore environment variables
+.env
+
+# Ignore compiled files
+__pycache__/
+*.pyc
+
+# Ignore IDE/Editor files
+.vscode/
+.idea/
+
+# Ignore FAISS index files
+faiss_store_openai.pkl
+
+# Ignore cache or temporary files
+*.log
