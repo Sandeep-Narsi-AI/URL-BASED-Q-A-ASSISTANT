@@ -5,7 +5,7 @@ import time
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import InMemoryVectorStore
 from langchain.chains import RetrievalQAWithSourcesChain
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
