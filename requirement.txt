@@ -3,3 +3,5 @@ openai
 langchain
 faiss-cpu
 python-dotenv
+langchain-openai
+langchain-community
