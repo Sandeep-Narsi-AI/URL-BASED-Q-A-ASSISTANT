@@ -1,8 +1,14 @@
 streamlit
 openai
+<<<<<<< HEAD
 langchain==0.1.17
 langchain-community==0.0.25
 langchain-openai==0.0.6
+=======
+langchain
+langchain-community
+langchain-openai
+>>>>>>> 4474fe1 (final)
 faiss-cpu
 python-dotenv
 unstructured
