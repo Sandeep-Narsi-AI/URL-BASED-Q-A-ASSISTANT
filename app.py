@@ -2,13 +2,15 @@ import os
 import pickle
 import streamlit as st
 import time
-
-from langchain_community.vectorstores import InMemoryVectorStore
+import langchain
+from langchain import OpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+from dotenv import load_dotenv
+
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
