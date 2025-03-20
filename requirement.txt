@@ -1,7 +1,8 @@
 streamlit
 openai
 langchain
+langchain-community
+langchain-openai
 faiss-cpu
 python-dotenv
-langchain-openai
-langchain-community
+unstructured
