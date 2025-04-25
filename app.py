@@ -17,6 +17,9 @@ else:
 
     st.title("Insurance Policy Chatbot")
 
+    if "qa_history" not in st.session_state:
+        st.session_state.qa_history = []
+
     pdf = st.file_uploader("Upload Insurance PDF", type=["pdf"])
     if pdf:
         with open("policy.pdf", "wb") as f:
@@ -35,6 +38,13 @@ else:
         if st.button("Get Answer"):
             if query:
                 response = qa.run(query)
+                st.session_state.qa_history.append({"question": query, "answer": response})
                 st.write("Answer:", response)
             else:
                 st.write("Please enter a question.")
+
+    st.subheader("Previous Questions and Answers:")
+    if st.session_state.qa_history:
+        for qa_pair in st.session_state.qa_history:
+            st.write(f"**Q:** {qa_pair['question']}")
+            st.write(f"**A:** {qa_pair['answer']}")
