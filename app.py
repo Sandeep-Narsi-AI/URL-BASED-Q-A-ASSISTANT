@@ -32,6 +32,9 @@ else:
         qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(), retriever=retriever)
 
         query = st.text_input("Ask a question about your insurance policy:")
-        if query:
-            response = qa.run(query)
-            st.write("Answer:", response)
+        if st.button("Get Answer"):
+            if query:
+                response = qa.run(query)
+                st.write("Answer:", response)
+            else:
+                st.write("Please enter a question.")
